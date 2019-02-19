@@ -1,0 +1,90 @@
+:root {
+    --color-white: #fff;
+    --color-grey: #222;
+    --color-light-grey: lightgrey;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-grey);
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+    margin: 0;
+    background-color: var(--color-light-grey);
+}
+
+a {
+    text-decoration: none;
+    color: #4d4e53;
+    font-size: 1.2em;
+}
+
+header {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+nav header {
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+#grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "nav main";
+}
+
+nav {
+    grid-area: nav;
+    border: 0.5px solid black;
+}
+
+#navbar ul {
+    padding: 0;
+    overflow: auto;
+}
+
+#navbar li {
+    list-style: none;
+    border: 1px solid black;
+    padding: 8px;
+    cursor: pointer;
+}
+
+main {
+    background-color: var(--color-white);
+    padding: 32px;
+    grid-area: main;
+    border: 0.5px solid black;
+    overflow: auto;
+}
+
+@media (max-width: 600px) {
+    #navbar ul {
+        height: 200px;
+        overflow: auto;
+    }
+
+    #grid-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: minmax(150px, auto) auto;
+        grid-template-areas: "nav""main";
+    }
+}
